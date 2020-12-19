@@ -9,6 +9,34 @@ model = joblib.load(open(r'model.pkl', 'rb'))
 def home():
     return render_template(r'index.html')
 
+
+@app.route('/camscan')
+def camscan():
+    return render_template(r'camscan.html')
+
+
+@app.route('/questions')
+def questions():
+    return render_template(r'questions.html')
+
+@app.route('/mood')
+def mood():
+    return render_template(r'mood.html')
+
+
+
+@app.route('/questions2')
+def questions2():
+    return render_template(r'questions2.html')
+
+
+
+@app.route('/remedies')
+def remedies():
+    return render_template(r'remedies.html')
+
+
+
 @app.route('/predict',methods=['POST'])
 def predict():
     '''
