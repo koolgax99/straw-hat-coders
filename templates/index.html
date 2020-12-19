@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+
+<head>
+  <meta charset="UTF-8">
+  <title>Terra&Tech</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/form2.css') }}">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>
+        <a href="#">
+          <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Authentic Collection"
+            style="width: 600px; filter: blur(0.5px);">
+        </a>
+      </h1>
+    </header>
+    <h1 class="text-center">Explore here !</h1>
+    <form action="{{ url_for('predict')}}" method="post">
+      <div class="registeration-form">
+
+        <label>
+          <span class="label-text">Budget(monthly) for the home loan</span>
+          <input type="text" name="budget" required="required">
+        </label>
+        <label>
+          <span class="label-text">Expected years to repay the loan</span>
+          <input type="text" name="years" required="required">
+        </label>
+        <label>
+          <span class="label-text">Interest rate (expecting)</span>
+          <input type="text" name="rate" required="required">
+        </label>
+        <label>
+          <span class="label-text">Amount of down payment</span>
+          <input type="text" name="principal" required="required">
+        </label>
+
+        <div class="text-center">
+          <button onclick="myFunction()" class="submit" name="register" style="background-color: rgb(41, 43, 43);">
+            <p style="color: white;">Predict</p>
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <dialog id="myDialog" style="position: relative; left: 30%; width:40%; bottom: 30%; height: 55%; background-color: rgba(0, 0, 0, 0.767);">
+      <center><p style="color: white;">Here ! As per your preferences , We are showing the <br>area you can own in this price and possible<br>features that your asset may have<br>HAPPY INVESTING!</p> </center>
+      <p style="color: white; position: relative; left: 10%;" >
+      <br>
+      <!--You can buy a house of Rs.{{ total }} out of which <br> Rs.{{ principal }} is the Down Payment.
+      <br>
+      <br>-->
+      {{ area }}
+      <br>
+      {{bhk}}
+      <br>
+      {{bathroom}}
+      <br>
+      {{parking}}
+      <br>
+      {{furnishing}}
+      <br>
+      {{status}}
+      <br>
+      {{transaction}}
+      <br>
+      {{typehouse}}
+      </p>
+      <br>
+      <center><p style="color: white;">press ESC to exit</p></center>
+      
+    </dialog>
+    
+  </div>
+
+  <script>
+    function myFunction() { 
+      document.getElementById("myDialog").showModal(); 
+    } 
+  </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Contact us form Using HTML and CSS</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/form2.css') }}">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>
+        <a href="#">
+          <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Authentic Collection"
+            style="width: 600px; filter: blur(0.5px);">
+        </a>
+      </h1>
+    </header>
+    <br>
+    <br>
+    {{ area }}
+    <br>
+    {{bhk}}
+    <br>
+    {{bathroom}}
+    <br>
+    {{furnishing}}
+    <br>
+    {{parking}}
+    <br>
+    {{status}}
+    <br>
+    {{transaction}}
+    <br>
+    {{typehouse}}
+  </div>
+
+
+</body>
+
+</html>
