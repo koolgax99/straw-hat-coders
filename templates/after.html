@@ -1,12 +1,269 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+  <meta charset="UTF-8">
+
+  <title>MentalEvaluationApp</title>
+  
+ 
+
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+  
+
+
+ 
+
+
+
 </head>
-<body>
-    Your mood is {{data}}
-    <img src="{{url_for('static',filename='cropped.jpg')}}">
+
+
+<style>
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: black;
+    background-image: url("https://media.giphy.com/media/ToMjGpjm9vQhsB4cqVa/giphy.gif");
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    border: 5px inset ;
+    border-color: #ffa03a;
+
+    
+}
+
+.r-link{
+	display: var(--rLinkDisplay, inline-flex) !important;
+}
+
+.r-link[href]{
+	color: var(--rLinkColor) !important;
+	text-decoration: var(--rLinkTextDecoration, none) !important;
+}
+
+.text-underlined{
+    /*
+        1. I use pixels units because others units (em, rem, vw, vh, etc) can
+        lead to the mistake of displaying a circumcised line
+    */
+
+    --uiTextUnderlinedLineHeight: var(--textUnderlinedLineHeight, 2px); /* 1 */
+    --uiTextUnderlinedLineGap: var(--textUnderlinedLineGap, .5rem);
+    --uiTextUnderlinedPaddingBottom: calc(var(--uiTextUnderlinedLineHeight) + var(--uiTextUnderlinedLineGap));
+
+    padding-bottom: var(--uiTextUnderlinedPaddingBottom) !important;
+    position: var(--textUnderlinedPosition, relative) !important;
+		z-index: var(--textUnderlinedZindex, 1) !important;
+}
+
+.text-underlined::after{
+    content: "";
+    width: var(--textUnderlinedLineWidht, 100%) !important;
+    height: var(--uiTextUnderlinedLineHeight) !important;
+		background-image: var(--textUnderlinedBackgroundImage, linear-gradient(to top, var(--textUnderlinedLineColor, currentColor) 30%, rgba(0, 0, 0, 0) 45%)) !important;
+
+    position: absolute;
+    left: var(--textUnderlinedLineLeft, 0) !important;
+    bottom: var(--textUnderlinedLineBottom, 0) !important;
+		z-index: var(--textUnderlinedLineZindex, -1) !important;
+}
+
+/*
+=====
+CORE
+=====
+*/
+
+.link{
+	--textUnderlinedLineHeight: 100%;
+	--textUnderlinedLineGap: 0;
+	--textUnderlinedLineColor: #fed330;
+	
+	padding-left: .75rem;
+	padding-right: .75rem;
+}
+
+.link::after{
+	will-change: width;
+	transition: width .1s ease-out;
+	transform: rotate(-2deg);
+	transform-origin: left bottom;
+}
+
+.link:hover{
+	--textUnderlinedLineWidht: 0;
+}
+
+.link:hover::after{
+	transition-duration: .15s;
+}
+
+/*
+* These styles for text decoration. The demo will be work without it
+*/
+
+.link{
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.link:focus{
+	outline: 2px solid #fed330;
+	outline-offset: .5rem;
+}
+
+/*
+=====
+DEMO
+=====
+*/
+
+:root{
+	--rLinkColor: rgb(10, 12, 141);
+}
+
+
+
+</style>
+
+
+<body style="
+
+background-size: 50%;
+
+background-position:  top center;
+background-color:black;
+
+;">
+
+
+
+
+<div class="gio" style= "
+
+border: 30px inset ;
+border-color: #ffd3a3;
+background-color: rgb(255, 199, 136);
+
+
+
+">
+
+
+  <h1 style="  color: #000000; 
+  font-family:
+   'Lato', sans-serif;
+    font-size: 54px; 
+    font-weight: 300;
+    line-height: 58px;
+    margin: 0 0 58px;
+    text-align: center;
+    margin-top: 20px;
+    "> 
+    
+    Mental Evaluation App
+  
+  </h1>
+
+  <p style= "color: #000000;
+   font-family: 
+   'Lucida Sans', Arial, sans-serif; 
+   font-size: 16px; 
+   line-height: 26px;
+   text-indent: 30px; 
+   margin: 0;
+   text-align: center;
+    
+  "> 
+  
+  Next Steps:
+
+  </p>
+
+
+  <br/>
+
+  <p style= "color: #000000;
+   font-family: 
+   'Lucida Sans', Arial, sans-serif; 
+   font-size: 16px; 
+   line-height: 26px;
+   text-indent: 30px; 
+   margin: 0;
+   text-align: center;
+   margin-bottom: 20px;
+    
+  "> 
+  
+  
+
+  </p>
+
+
+</div>
+
+
+
+
+<img src="https://media.giphy.com/media/l0He4fJxPCbfqv7Xi/giphy.gif" 
+alt="Girl in a jacket" 
+style=" 
+
+
+
+display: block;
+border: 30px outset ;
+border-color: #ffbd76;
+
+
+
+
+margin-left: auto;
+margin-right: auto;
+margin-top: 50px
+
+"
+
+>
+  
+
+<br/>
+<br/>
+<br/>
+
+<p style= "color: #ffffff;
+   font-family: 
+   'Lucida Sans', Arial, sans-serif; 
+   font-size: 32px; 
+   line-height: 26px;
+   text-indent: 30px; 
+   margin: 0;
+   text-align: center;
+   margin-bottom: 20px;
+    
+  "> 
+  
+  Your current mood is observed to be {{data}} <br><br>
+    <img src="{{url_for('static',filename='after_processing.jpg')}}"> <br><br>
+    Next step: <a href="{{url_for('answer')}}" class="r-link link text-underlined">answer the questions</a>
+
+  </p>
+
+    
 </body>
 </html>

@@ -37,7 +37,7 @@ a.button1 {
     color: black;
     background-image: url("https://media.giphy.com/media/ToMjGpjm9vQhsB4cqVa/giphy.gif");
     background-position: center;
-    display: none;
+
     justify-content: center;
     align-items: center;
     font-size: 30px;
@@ -72,6 +72,16 @@ a.button2 {
     
 
     
+}
+
+.question{
+    color: #00e0fd;
+   font-family: 
+   'Lucida Sans', Arial, sans-serif; 
+   font-size: 16px; 
+   line-height: 26px;
+   text-indent: 30px; 
+   margin: 0;
 }
 
 
@@ -113,7 +123,7 @@ background-color: rgb(255, 199, 136);
     margin-top: 20px;
     "> 
     
-    REMEDIES
+    squestions
   
   </h1>
 
@@ -128,9 +138,9 @@ background-color: rgb(255, 199, 136);
     
   "> 
   
- Just look into the camera , and after a certian ammount of time we will give you a 
- new button to press
-
+Please answer the questions honestly, nobody's going to judge you :) 
+<br>
+Answer 1, 2 or 3.
   </p>
 
 
@@ -139,34 +149,20 @@ background-color: rgb(255, 199, 136);
 
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<br/>
-<br/>
-
-
-
-
-
-
-
-
-
-
-
+    <form action="{{ url_for('answer') }}" method="POST">
+        <p class="question">Question 1</p>
+        <input type="text" name="ans1"> <br><br>
+        <p class="question">Question 2</p>
+        <input type="text" name="ans2"> <br><br>
+        <p class="question">Question 3</p>
+        <input type="text" name="ans3"> <br><br>
+        <p class="question">Question 4</p>
+        <input type="text" name="ans4"> <br><br>
+        <p class="question">Question 5</p>
+        <input type="text" name="ans5"> <br><br>
+        <p class="question">Question 6</p>
+        <input type="text" name="ans6"> <br><br>
+        <input type="submit">
+    </form>
 </body>
-
 </html>

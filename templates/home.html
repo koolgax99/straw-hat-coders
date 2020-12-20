@@ -1,4 +1,14 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--<a href={{url_for("index")}}> Start the Evaluation</a>
+</body>
+</html><!DOCTYPE html>
 <html>
 <!--From https://codepen.io/frytyler/pen/EGdtg-->
 
@@ -28,7 +38,7 @@
 
 <style>
 
-a.button1 {
+a.button {
     -webkit-appearance: button;
     -moz-appearance: button;
     appearance: button;
@@ -37,39 +47,12 @@ a.button1 {
     color: black;
     background-image: url("https://media.giphy.com/media/ToMjGpjm9vQhsB4cqVa/giphy.gif");
     background-position: center;
-    
+    display: flex;
     justify-content: center;
     align-items: center;
     font-size: 30px;
     border: 5px inset ;
     border-color: #ffa03a;
-    margin-left: 500px;
-    margin-bottom: 40px;
-
-
-    
-}
-a.button2 {
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
-
-    text-decoration: none;
-    color: black;
-    background-image: url("https://media.giphy.com/media/ToMjGpjm9vQhsB4cqVa/giphy.gif");
-    background-position: center;
-    
-    font-size: 30px;
-    border: 5px inset ;
-    border-color: #ffa03a;
-
-    margin-left: 500px
-  
-    
-
-
-   
-    
 
     
 }
@@ -113,7 +96,7 @@ background-color: rgb(255, 199, 136);
     margin-top: 20px;
     "> 
     
-    MOOD
+    Mental Evaluation App
   
   </h1>
 
@@ -128,13 +111,29 @@ background-color: rgb(255, 199, 136);
     
   "> 
   
- Just look into the camera , and after a certian ammount of time we will give you a 
- new button to press
+  Have you been feeling down lately? Not sure where to get the mental help you need?
+  Or even just checking in on your mental status? 
 
   </p>
 
 
   <br/>
+
+  <p style= "color: #000000;
+   font-family: 
+   'Lucida Sans', Arial, sans-serif; 
+   font-size: 16px; 
+   line-height: 26px;
+   text-indent: 30px; 
+   margin: 0;
+   text-align: center;
+   margin-bottom: 20px;
+    
+  "> 
+  
+  No problem! Just click the <b>Get Started</b> button and we will guide you!
+
+  </p>
 
 
 </div>
@@ -142,32 +141,38 @@ background-color: rgb(255, 199, 136);
 
 
 
+<img src="https://media.giphy.com/media/l0He4fJxPCbfqv7Xi/giphy.gif" 
+alt="Girl in a jacket" 
+style=" 
+
+
+
+display: block;
+border: 30px outset ;
+border-color: #ffbd76;
 
 
 
 
+margin-left: auto;
+margin-right: auto;
+margin-top: 50px
 
+"
 
-
-
-
-
-
-
-<br/>
-<br/>
-
-
-
-<a href="/remedies" class="button1">
+>
   
-  NEXT
+
+<br/>
+<br/>
+<br/>
  
- 
- </a>
-   
+<a href="{{url_for('index')}}" class="button">
+  
+ Get Started
 
 
+</a>
 
 
 
