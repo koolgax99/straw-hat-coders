@@ -1,5 +1,5 @@
 # straw-hat-coders
-Let's make depression a thing of the past. We're in this together
+Let's make depression a thing of the past. We're in this together.
 
 
 
