@@ -5,6 +5,12 @@ import joblib
 app = Flask(__name__)
 model = joblib.load(open(r'model.pkl', 'rb'))
 
+value = "blank"
+radnom = "test"
+
+
+
+
 @app.route('/')
 def home():
     return render_template(r'index.html')
@@ -25,9 +31,34 @@ def mood():
 
 
 
-@app.route('/questions2')
+@app.route('/questions2' , methods=['GET', 'POST'])
 def questions2():
-    return render_template(r'questions2.html')
+    if request.method == 'POST':
+
+        # do something
+        tag = request.form['tag']
+
+    
+        app.logger.warning('testing warning log')
+        app.logger.error('testing error log')
+        app.logger.info('testing info log')
+
+
+        value = tag
+
+        return render_template(r'questions2submitted.html')
+
+
+       
+    else:
+        return render_template(r'questions2.html')
+
+
+
+    @app.route('/questions2submitted')
+    def questions2submitted():
+        return render_template(r'questions2submitted.html')
+
 
 
 
@@ -42,7 +73,9 @@ def predict():
     '''
     For rendering results on HTML GUI
     '''
-    
+
+
+
 
 
 if __name__ == "__main__":
