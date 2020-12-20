@@ -1,12 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<html>
+<style>
+    #w3review{
+        padding-left: 50;
+        padding-top: 20;
+        padding-bottom: 20;
+    }
+    #btn5{
+            margin-top: 20;
+            margin-left: 50;
+            height: 30;
+            width: 150;
+            font-size:15;
+        }
+    #btn4{
+            margin-top: 20;
+            margin-left: 50;
+            height: 30;
+            width: 250;
+            font-size:15;
+    }
+    #head2{
+        font-size: 25px;
+    }
+        body{
+            background: #e65c00;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #F9D423, #e65c00);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #F9D423, #e65c00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   }
+</style>
 <body>
-    You are happy! <br>
-    Your total score was {{score}}
+    <center><b><h1><u>Happy Page</u></h1></b></center>
+    <h3>Cool!,if you are evaluated happy ,you can help others by:</h3>
+    <ul style="list-style: disc;">
+    <li id = "head2">Giving some tricks and tips to remain happy in the below text box:.</li><br><br>
+    <form action="/action_page.php">
+        <textarea id="w3review" name="w3review" rows="4" cols="50">
+          Give me some texts!
+          </textarea>
+          <br><br>
+        </form> 
+    <li id = "head2">If you wanna take a look at how we help sad people ,You can click on below button !:</li>
+    </ul>
+    <button type="button" id="btn4"><b><a href="sad_page.html">Let's Go to the other page !</a></b></button><br>
+    <button type="button" id ="btn5"><b>Submit Review</b></button>
+    <h2 id = "w3review"><b>At last thanks for using this webpage,hope you have a great day ahed!</b></h2>
 </body>
 </html>
