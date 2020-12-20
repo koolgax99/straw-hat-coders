@@ -1,5 +1,5 @@
 # straw-hat-coders
-We will help you in getting out of depression and pain.
+Let's make depression a thing of the past. We're in this together
 
 
 
