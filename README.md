@@ -1,2 +1,2 @@
 # straw-hat-coders
-We will help you getting out of your depression and sadness.
+We will help you in getting out of depression and pain.
