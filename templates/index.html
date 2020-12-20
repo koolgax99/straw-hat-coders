@@ -2,90 +2,170 @@
 <html>
 <!--From https://codepen.io/frytyler/pen/EGdtg-->
 
+
 <head>
+
   <meta charset="UTF-8">
-  <title>Terra&Tech</title>
+
+  <title>MentalEvaluationApp</title>
+  
+ 
+
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/form2.css') }}">
+
+  
+
+
+ 
+
+
+
 </head>
 
-<body>
-  <div class="container">
-    <header>
-      <h1>
-        <a href="#">
-          <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Authentic Collection"
-            style="width: 600px; filter: blur(0.5px);">
-        </a>
-      </h1>
-    </header>
-    <h1 class="text-center">Explore here !</h1>
-    <form action="{{ url_for('predict')}}" method="post">
-      <div class="registeration-form">
 
-        <label>
-          <span class="label-text">Budget(monthly) for the home loan</span>
-          <input type="text" name="budget" required="required">
-        </label>
-        <label>
-          <span class="label-text">Expected years to repay the loan</span>
-          <input type="text" name="years" required="required">
-        </label>
-        <label>
-          <span class="label-text">Interest rate (expecting)</span>
-          <input type="text" name="rate" required="required">
-        </label>
-        <label>
-          <span class="label-text">Amount of down payment</span>
-          <input type="text" name="principal" required="required">
-        </label>
+<style>
 
-        <div class="text-center">
-          <button onclick="myFunction()" class="submit" name="register" style="background-color: rgb(41, 43, 43);">
-            <p style="color: white;">Predict</p>
-          </button>
-        </div>
-      </div>
-    </form>
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
 
-    <dialog id="myDialog" style="position: relative; left: 30%; width:40%; bottom: 30%; height: 55%; background-color: rgba(0, 0, 0, 0.767);">
-      <center><p style="color: white;">Here ! As per your preferences , We are showing the <br>area you can own in this price and possible<br>features that your asset may have<br>HAPPY INVESTING!</p> </center>
-      <p style="color: white; position: relative; left: 10%;" >
-      <br>
-      <!--You can buy a house of Rs.{{ total }} out of which <br> Rs.{{ principal }} is the Down Payment.
-      <br>
-      <br>-->
-      {{ area }}
-      <br>
-      {{bhk}}
-      <br>
-      {{bathroom}}
-      <br>
-      {{parking}}
-      <br>
-      {{furnishing}}
-      <br>
-      {{status}}
-      <br>
-      {{transaction}}
-      <br>
-      {{typehouse}}
-      </p>
-      <br>
-      <center><p style="color: white;">press ESC to exit</p></center>
-      
-    </dialog>
+    text-decoration: none;
+    color: black;
+    background-image: url("https://media.giphy.com/media/ToMjGpjm9vQhsB4cqVa/giphy.gif");
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    border: 5px inset ;
+    border-color: #ffa03a;
+
     
-  </div>
+}
 
-  <script>
-    function myFunction() { 
-      document.getElementById("myDialog").showModal(); 
-    } 
-  </script>
+
+
+</style>
+
+
+<body style="
+
+background-size: 50%;
+
+background-position:  top center;
+background-color:black;
+
+;">
+
+
+
+
+<div class="gio" style= "
+
+border: 30px inset ;
+border-color: #ffd3a3;
+background-color: rgb(255, 199, 136);
+
+
+
+">
+
+
+  <h1 style="  color: #000000; 
+  font-family:
+   'Lato', sans-serif;
+    font-size: 54px; 
+    font-weight: 300;
+    line-height: 58px;
+    margin: 0 0 58px;
+    text-align: center;
+    margin-top: 20px;
+    "> 
+    
+    Mental Evaluation App
+  
+  </h1>
+
+  <p style= "color: #000000;
+   font-family: 
+   'Lucida Sans', Arial, sans-serif; 
+   font-size: 16px; 
+   line-height: 26px;
+   text-indent: 30px; 
+   margin: 0;
+   text-align: center;
+    
+  "> 
+  
+  Have you been feeling down latley? Not sure where to get the mental help you need?
+  Or even just checking in on your mental status? 
+
+  </p>
+
+
+  <br/>
+
+  <p style= "color: #000000;
+   font-family: 
+   'Lucida Sans', Arial, sans-serif; 
+   font-size: 16px; 
+   line-height: 26px;
+   text-indent: 30px; 
+   margin: 0;
+   text-align: center;
+   margin-bottom: 20px;
+    
+  "> 
+  
+  No poroblem! Just click the "Get Started" button and we will guide you!
+
+  </p>
+
+
+</div>
+
+
+
+
+<img src="https://media.giphy.com/media/l0He4fJxPCbfqv7Xi/giphy.gif" 
+alt="Girl in a jacket" 
+style=" 
+
+
+
+display: block;
+border: 30px outset ;
+border-color: #ffbd76;
+
+
+
+
+margin-left: auto;
+margin-right: auto;
+margin-top: 50px
+
+"
+
+>
+  
+
+<br/>
+<br/>
+<br/>
+ 
+<a href="/camscan" class="button">
+  
+ Take our test
+
+
+</a>
+
+
+
 
 
 </body>
