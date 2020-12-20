@@ -11,6 +11,10 @@ p { color: #adb7bd;
     line-height: 26px;
     text-indent: 30px;
     margin: 0; }
+button{
+     height: 50;
+     width: 100;
+}
 
 
 a { color: #fe921f;
